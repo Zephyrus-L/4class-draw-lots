@@ -3,7 +3,7 @@ use serde::{Deserialize, Serialize};
 use std::{collections::HashMap, fs, path::PathBuf};
 
 #[derive(Serialize, Deserialize, Clone)]
-struct AppData { groups: Vec<serde_json::Value>, draws: Vec<serde_json::Value> }
+struct AppData { groups: Vec<serde_json::Value>, draws: Vec<serde_json::Value>, #[serde(default)] settings: serde_json::Value }
 
 fn data_path() -> PathBuf {
     std::env::current_exe().expect("executable path").parent().expect("executable directory").join("data").join("draw.sqlite")

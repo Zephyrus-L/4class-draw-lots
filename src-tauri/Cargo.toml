@@ -1,0 +1,19 @@
+[package]
+name = "draw-lottery"
+version = "1.0.0"
+description = "A simple local lottery desktop app"
+authors = ["Draw Lottery"]
+edition = "2021"
+
+[lib]
+name = "draw_lottery_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.32", features = ["bundled"] }
+tauri = { version = "2", features = [] }

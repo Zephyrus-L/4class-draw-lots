@@ -1,0 +1,12 @@
+node_modules/
+dist/
+src-tauri/target/
+绿色版/
+data/draw.sqlite
+data/draw.sqlite-*
+*.log
+*.pdb
+.env
+.env.*
+!.env.example
+AGENTS.md

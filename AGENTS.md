@@ -2,7 +2,7 @@
 
 ## 项目简介
 
-本项目是仅面向 Windows 的轻量级便携版桌面抽签工具，应用名为“4class抽签”，当前版本为 `1.0.0`。程序无需安装，业务数据保存在可执行文件同级的 `data` 目录，复制整个便携版目录即可迁移软件及数据。
+本项目是仅面向 Windows 的轻量级便携版桌面抽签工具，应用名为“4class”，当前版本为 `1.0.1`。程序无需安装，业务数据保存在可执行文件同级的 `data` 目录，复制整个便携版目录即可迁移软件及数据。
 
 GitHub 仓库：https://github.com/Zephyrus-L/4class-draw-lots
 
@@ -85,7 +85,7 @@ docs/preview/
 data/probabilities/
   probabilities.txt        开发目录中的权重配置模板
 便携版/
-  4class抽签.exe           当前 Windows 便携版程序
+  4class.exe               当前 Windows 便携版程序
   data/                    发布程序的本地数据目录
 ```
 
@@ -246,7 +246,7 @@ src-tauri/target/release/draw-lottery.exe
 发布时将其复制为：
 
 ```text
-便携版/4class抽签.exe
+便携版/4class.exe
 ```
 
 同时确保存在：
@@ -265,5 +265,5 @@ src-tauri/target/release/draw-lottery.exe
 - 不要让 Release 程序显示终端窗口。
 - 修改抽签算法后必须运行 `npm run test:weights`。
 - 修改前端后必须运行 `npm run build`。
-- 修改 Rust、Tauri 配置或发布资源后必须重新运行 Tauri Release 构建，并更新 `便携版/4class抽签.exe`；便携版目录不提交打包程序、数据库或本地配置。
+- 修改 Rust、Tauri 配置或发布资源后必须重新运行 Tauri Release 构建，并更新 `便携版/4class.exe`；便携版目录不提交打包程序、数据库或本地配置。
 - 每次完成版本更新后，交付说明必须提醒用户将变更提交并同步推送至 GitHub。

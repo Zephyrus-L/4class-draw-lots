@@ -2,7 +2,7 @@
 name = "draw-lottery"
 version = "1.0.0"
 description = "A simple local lottery desktop app"
-authors = ["Draw Lottery"]
+authors = ["4class"]
 edition = "2021"
 
 [lib]

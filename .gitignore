@@ -10,3 +10,4 @@ data/draw.sqlite-*
 .env.*
 !.env.example
 AGENTS.md
+便携版/*.exe

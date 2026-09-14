@@ -1,4 +1,4 @@
 @echo off
-cd /d "%~dp0"
+cd /d "%~dp0.."
 call npm install
 call npm run dev

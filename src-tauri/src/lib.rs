@@ -1,6 +1,6 @@
 use rusqlite::{params, Connection};
 use serde::{Deserialize, Serialize};
-use std::{collections::HashMap, fs, path::PathBuf};
+use std::{collections::HashMap, fs, path::PathBuf, process::Command};
 
 #[derive(Serialize, Deserialize, Clone)]
 struct AppData { groups: Vec<serde_json::Value>, draws: Vec<serde_json::Value>, #[serde(default)] settings: serde_json::Value }
@@ -57,7 +57,16 @@ fn load_probabilities() -> Result<HashMap<String, f64>, String> {
     Ok(values)
 }
 
+#[tauri::command]
+fn open_github() -> Result<(), String> {
+    Command::new("cmd")
+        .args(["/C", "start", "", "https://github.com/Zephyrus-L/4class-draw-lots"])
+        .spawn()
+        .map(|_| ())
+        .map_err(|error| error.to_string())
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
-    tauri::Builder::default().invoke_handler(tauri::generate_handler![load_data, save_data, load_probabilities]).run(tauri::generate_context!()).expect("error while running application");
+    tauri::Builder::default().invoke_handler(tauri::generate_handler![load_data, save_data, load_probabilities, open_github]).run(tauri::generate_context!()).expect("error while running application");
 }

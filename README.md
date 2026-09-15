@@ -1,12 +1,14 @@
 # 4class
 
-当前版本：`1.0.1`
+当前版本：`1.0.2`
 
 Windows 便携版抽签工具，数据保存在程序同级的 `data` 目录。
 
 GitHub 仓库：https://github.com/Zephyrus-L/4class-draw-lots
 
 本项目采用 MIT License，详见 `LICENSE`。
+
+应用名称为 `4class抽签`，关于页面显示当前版本，并可调用系统默认浏览器打开 GitHub 项目。
 
 ## 开发预览
 

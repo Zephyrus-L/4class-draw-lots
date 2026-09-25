@@ -9,7 +9,7 @@ import './selection.css'
 import './theme.css'
 
 const initialPeople = ['林晓', '周宁', '陈默', '王悦', '刘洋', '赵安', '孙妍', '李想']
-const APP_VERSION = '1.0.2'
+const APP_VERSION = '2.0.0'
 const defaultState = { schemaVersion: 2, groups: [{ id: '001', name: '默认名单', people: initialPeople.map((name, id) => ({ id, name, drawn: false })), selectedPersonIds: [] }], draws: [], settings: { count: 1, removeDrawn: true, recordHistory: true, activeGroup: '001', tab: 'draw' } }
 
 function normalize(saved) {

@@ -1,8 +1,12 @@
 # 4class抽签项目交接说明
 
+## 品牌与应用定位
+
+`4class` 是本项目的品牌名，`4` 为 `for` 的谐音，意为“为课堂设计”的系列软件。本应用名称为“抽签”，组合名称为“4class抽签”。项目专为课堂服务。
+
 ## 项目简介
 
-本项目是仅面向 Windows 的轻量级便携版桌面抽签工具，应用名为“4class抽签”，当前版本为 `1.0.2`。程序无需安装，业务数据保存在可执行文件同级的 `data` 目录，复制整个便携版目录即可迁移软件及数据。
+本项目是仅面向 Windows 的轻量级便携版桌面抽签工具，应用名为“4class抽签”，当前版本为 `1.0.2`。程序无需安装，业务数据保存在可执行文件同级的 `data` 目录，复制整个“打包的测试用软件”目录即可迁移软件及数据。
 
 GitHub 仓库：https://github.com/Zephyrus-L/4class-draw-lots
 
@@ -60,6 +64,21 @@ GitHub 仓库：https://github.com/Zephyrus-L/4class-draw-lots
 
 浏览器开发预览无法调用 Tauri 命令时，名单和记录回退到 `localStorage`。正式桌面程序以 SQLite 数据为准。
 
+## 工作区架构
+
+工作区分为两个部分：
+
+1. 软件源代码：用于开发、维护和构建应用。
+2. 完成打包的测试用软件：用于验证打包后的 Windows 便携版程序。
+
+```text
+工作区/
+├─ 软件源代码/
+└─ 打包的测试用软件/
+```
+
+当前仓库以根目录作为软件源代码目录，以 `打包的测试用软件/` 作为完成打包的测试用软件目录。
+
 ## 关键目录
 
 ```text
@@ -76,8 +95,6 @@ src-tauri/
   src/main.rs              Windows GUI 程序入口
   tauri.conf.json          应用名、版本、窗口和图标配置
   icons/                   Windows 及其他 Tauri 图标资源
-test/
-  weightedPick.test.mjs    概率抽签确定性测试
 scripts/
   构建便携版.bat           Windows 便携版构建脚本
   启动开发版.bat           Windows 开发启动脚本
@@ -85,9 +102,9 @@ docs/preview/
   *.png                    界面预览图片
 data/probabilities/
   probabilities.txt        开发目录中的权重配置模板
-便携版/
-  4class.exe               当前 Windows 便携版程序
-  data/                    发布程序的本地数据目录
+打包的测试用软件/
+  4class.exe               完成打包的测试用软件
+  data/                    测试软件的本地数据目录
 ```
 
 ## 应用状态结构
@@ -212,19 +229,6 @@ npm run dev
 npm run build
 ```
 
-概率算法测试：
-
-```powershell
-npm run test:weights
-```
-
-该测试覆盖：
-
-- 通用 `100%` 强制命中。
-- 最终概率在确定随机值下的选择边界。
-- 具体名单组配置覆盖通用配置。
-- 多人抽签移除已选人员后，从剩余池重新计算。
-
 Windows Release 构建需要：
 
 - Rust stable MSVC 工具链
@@ -247,13 +251,13 @@ src-tauri/target/release/draw-lottery.exe
 发布时将其复制为：
 
 ```text
-便携版/4class.exe
+打包的测试用软件/4class.exe
 ```
 
 同时确保存在：
 
 ```text
-便携版/data/probabilities/probabilities.txt
+打包的测试用软件/data/probabilities/probabilities.txt
 ```
 
 ## 修改约束
@@ -265,7 +269,7 @@ src-tauri/target/release/draw-lottery.exe
 - 主内容区滚动条必须贴紧窗口右侧。
 - 不要恢复右上角“本地数据已保存”文字。
 - 不要让 Release 程序显示终端窗口。
-- 修改抽签算法后必须运行 `npm run test:weights`。
 - 修改前端后必须运行 `npm run build`。
-- 修改 Rust、Tauri 配置或发布资源后必须重新运行 Tauri Release 构建，并更新 `便携版/4class.exe`；便携版目录不提交打包程序、数据库或本地配置。
+- 修改 Rust、Tauri 配置或发布资源后必须重新运行 Tauri Release 构建，并更新 `打包的测试用软件/4class.exe`；打包目录不提交打包程序、数据库或本地配置。
 - 每次完成版本更新后，交付说明必须提醒用户将变更提交并同步推送至 GitHub。
+- 每次修改都要同步至 `AGENTS.md` 和 `README.md`。

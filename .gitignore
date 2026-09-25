@@ -1,7 +1,7 @@
 node_modules/
 dist/
 src-tauri/target/
-便携版/
+打包的测试用软件/
 data/draw.sqlite
 data/draw.sqlite-*
 *.log
@@ -10,4 +10,4 @@ data/draw.sqlite-*
 .env.*
 !.env.example
 AGENTS.md
-便携版/*.exe
+打包的测试用软件/*.exe

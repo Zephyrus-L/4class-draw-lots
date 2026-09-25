@@ -11,3 +11,4 @@ data/draw.sqlite-*
 !.env.example
 AGENTS.md
 打包的测试用软件/*.exe
+APPLE-IOS18-DESIGN-SPEC.md

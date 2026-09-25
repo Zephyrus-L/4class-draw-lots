@@ -1,7 +1,7 @@
 .person-grid { display: flex; flex-wrap: wrap; gap: 8px; user-select: none; touch-action: none; }
-.person-grid button { min-width: 76px; min-height: 40px; padding: 0 12px; border: 1px solid var(--color-separator-opaque); background: var(--color-surface-secondary); color: var(--color-text-secondary); border-radius: var(--radius-md); cursor: pointer; }
-.person-grid button:hover { border-color: var(--color-accent); color: var(--color-text); }
-.person-grid button.chosen { border-color: var(--color-accent); background: var(--color-accent-soft); color: var(--color-accent); font-weight: 600; }
+.person-grid button { min-width: 76px; min-height: 40px; padding: 0 12px; border: 1px solid var(--color-separator-opaque); background: var(--color-surface); color: var(--color-text-secondary); border-radius: var(--radius-md); cursor: pointer; transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease; }
+.person-grid button:hover { background: var(--color-fill); color: var(--color-text); }
+.person-grid button.chosen { border-color: var(--color-accent); background: var(--color-accent-soft); color: var(--color-accent-hover); font-weight: 600; }
 .person-grid button.drawn { color: var(--color-text-tertiary); text-decoration: line-through; }
 .person-grid button small { display: block; font-size: 10px; text-decoration: none; }
 .person-grid.dragging button { cursor: grabbing; }

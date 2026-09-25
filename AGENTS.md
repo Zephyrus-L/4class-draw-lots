@@ -6,11 +6,11 @@
 
 ## 项目简介
 
-本项目是仅面向 Windows 的轻量级便携版桌面抽签工具，应用名为“4class抽签”，当前版本为 `2.0.0`。程序无需安装，业务数据保存在可执行文件同级的 `data` 目录，复制整个“打包的测试用软件”目录即可迁移软件及数据。
+本项目是仅面向 Windows 的轻量级便携版桌面抽签工具，应用名为“4class抽签”，当前版本为 `2.1.0`。程序无需安装，业务数据保存在可执行文件同级的 `data` 目录，复制整个“打包的测试用软件”目录即可迁移软件及数据。
 
 GitHub 仓库：https://github.com/Zephyrus-L/4class-draw-lots
 
-产品主要用于课堂、会议等人员随机抽取场景。界面采用简约的黑白灰浅色主题，应用图标为黑底白色几何转盘图形。正式构建为 Tauri Windows GUI 程序，启动时不显示终端窗口。
+产品主要用于课堂、会议等人员随机抽取场景。界面采用 Notion 风格的米白背景、克制灰阶和轻量边框，并支持浅色/深色系统主题；应用图标为黑底白色几何转盘图形。正式构建为 Tauri Windows GUI 程序，启动时不显示终端窗口。
 
 ## 当前功能
 
@@ -274,4 +274,4 @@ src-tauri/target/release/draw-lottery.exe
 - 每次完成版本更新后，交付说明必须提醒用户将变更提交并同步推送至 GitHub。
 - 每次修改都要同步至 `AGENTS.md` 和 `README.md`。
 
-界面规范：前端视觉层使用 `src/styles.css`、`src/selection.css` 和 `src/theme.css` 中的语义 CSS 变量，遵循 Apple 风格 Windows 桌面布局，支持浅色/深色系统主题、可见键盘焦点和 reduced-motion。界面改造不得修改后端命令、数据结构或抽签算法。
+界面规范：前端视觉层使用 `src/styles.css`、`src/selection.css` 和 `src/theme.css` 中的语义 CSS 变量，遵循 Notion 风格视觉规范与 Windows 桌面布局，支持浅色/深色系统主题、可见键盘焦点和 reduced-motion。界面改造不得修改后端命令、数据结构或抽签算法。

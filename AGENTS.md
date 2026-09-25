@@ -6,7 +6,7 @@
 
 ## 项目简介
 
-本项目是仅面向 Windows 的轻量级便携版桌面抽签工具，应用名为“4class抽签”，当前版本为 `1.0.2`。程序无需安装，业务数据保存在可执行文件同级的 `data` 目录，复制整个“打包的测试用软件”目录即可迁移软件及数据。
+本项目是仅面向 Windows 的轻量级便携版桌面抽签工具，应用名为“4class抽签”，当前版本为 `2.0.0`。程序无需安装，业务数据保存在可执行文件同级的 `data` 目录，复制整个“打包的测试用软件”目录即可迁移软件及数据。
 
 GitHub 仓库：https://github.com/Zephyrus-L/4class-draw-lots
 
@@ -273,3 +273,5 @@ src-tauri/target/release/draw-lottery.exe
 - 修改 Rust、Tauri 配置或发布资源后必须重新运行 Tauri Release 构建，并更新 `打包的测试用软件/4class.exe`；打包目录不提交打包程序、数据库或本地配置。
 - 每次完成版本更新后，交付说明必须提醒用户将变更提交并同步推送至 GitHub。
 - 每次修改都要同步至 `AGENTS.md` 和 `README.md`。
+
+界面规范：前端视觉层使用 `src/styles.css`、`src/selection.css` 和 `src/theme.css` 中的语义 CSS 变量，遵循 Apple 风格 Windows 桌面布局，支持浅色/深色系统主题、可见键盘焦点和 reduced-motion。界面改造不得修改后端命令、数据结构或抽签算法。
